@@ -1,0 +1,158 @@
+
+.checkbox {
+  margin-bottom: 20px;
+
+
+  &:last-child {
+    margin-bottom: 36px;
+  }
+
+  @media (min-width: @desktop-width) {
+    &:last-child {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.checkbox__label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkbox__title {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.checkbox__input[type="checkbox"] {
+  position: relative;
+  width: 42px;
+  height: 24px;
+  border-radius: 12px;
+  outline: none;
+  margin: 0;
+}
+
+.checkbox__input[type='checkbox'] {
+  cursor: pointer;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 42px;
+    height: 24px;
+    border-radius: 12px;
+    transform: translate(-50%, -50%);
+    background-color: @dark-grey;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: @white;
+    transform: translate(-50%, -50%);
+    visibility: visible;
+  }
+
+  &:disabled {
+
+    cursor: default;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 42px;
+      height: 24px;
+      border-radius: 12px;
+      transform: translate(-50%, -50%);
+      background-color: @dirty-white;
+    }
+
+    &:hover {
+      &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 70%;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: @dark-grey;
+        transform: translate(-50%, -50%);
+        visibility: visible;
+        box-shadow: inset 0 0 0 2px transparent;
+      }
+    }
+  }
+
+  &:disabled + .checkbox__title {
+    cursor: default;
+    color: @dark-grey;
+  }
+
+  &:checked {
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 42px;
+      height: 24px;
+      border-radius: 12px;
+      transform: translate(-50%, -50%);
+      background-color: @violet;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 70%;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: @white;
+      transform: translate(-50%, -50%);
+      visibility: visible;
+    }
+
+    &:hover {
+      &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 42px;
+        height: 24px;
+        border-radius: 12px;
+        transform: translate(-50%, -50%);
+        background-color: @violet25;
+        box-shadow: inset 0 0 0 2px @violet;
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 30%;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: @white;
+        transform: translate(-50%, -50%);
+        visibility: visible;
+      }
+    }
+  }
+}

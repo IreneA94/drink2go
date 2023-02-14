@@ -1,0 +1,135 @@
+.radio {
+  margin-bottom: 21px;
+
+
+  &:last-child {
+    margin-bottom: 24px;
+  }
+
+  @media (min-width: @desktop-width) {
+    &:last-child {
+      margin-bottom: 27px;
+    }
+  }
+}
+
+.radio__label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.radio__title {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.radio__input[type="radio"] {
+  position: relative;
+  width: 22px;
+  height: 22px;
+  outline: none;
+  margin: 0;
+}
+
+.radio__input[type='radio'] {
+  cursor: pointer;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    background-color: @white;
+    border: 2px solid @violet;
+  }
+
+  &:hover,
+  &:focus {
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: @violet25;
+      transform: translate(-50%, -50%);
+      visibility: visible;
+    }
+  }
+
+  &:disabled {
+
+    cursor: default;
+
+    &:checked {
+      &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background-color: @dirty-white;
+        transform: translate(-50%, -50%);
+        visibility: visible;
+      }
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      background-color: @white;
+      border: 2px solid @dirty-white;
+    }
+
+    &:hover {
+      &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background-color: @dirty-white;
+        transform: translate(-50%, -50%);
+        visibility: visible;
+      }
+    }
+  }
+
+  &:disabled + .radio__title {
+    cursor: default;
+    color: @dark-grey;
+  }
+
+  &:checked {
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: @violet;
+      transform: translate(-50%, -50%);
+      visibility: visible;
+    }
+  }
+}

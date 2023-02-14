@@ -1,0 +1,28 @@
+.copyright__link {
+  display: flex;
+  justify-content: center;
+  gap: 3px;
+  text-decoration: none;
+  color: @dark-grey;
+  font-size: 12px;
+  line-height: 16px;
+  padding: 15px 57px 30px 57px;
+
+  @media (min-width: @desktop-width) {
+    padding: 0;
+    margin-top: 28px;
+    margin-left: 230px;
+    justify-content: flex-start;
+  }
+}
+
+.copyright__link {
+  &:hover {
+    color: @violet;
+  }
+
+  &:focus,
+  &:active {
+    color: @violet-dark;
+  }
+}
